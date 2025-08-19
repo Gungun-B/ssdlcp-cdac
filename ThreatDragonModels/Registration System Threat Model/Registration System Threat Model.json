@@ -1,5 +1,5 @@
 {
-  "version": "2.4.1",
+  "version": "2.5.0",
   "summary": {
     "title": "Registration System Threat Model",
     "owner": "GUNGUN",
@@ -15,12 +15,817 @@
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "version": "2.4.1",
-        "cells": []
+        "version": "2.5.0",
+        "cells": [
+          {
+            "position": {
+              "x": 60,
+              "y": -170
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "student"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "5e2a3db5-7f9a-4845-8335-157892f19cc4"
+                },
+                {
+                  "group": "right",
+                  "id": "2ddea180-6c97-46f5-aa10-ee3ef513134a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5f672875-c57e-4474-be49-623432ecb385"
+                },
+                {
+                  "group": "left",
+                  "id": "29112dc1-117a-4215-8825-0e4ccf670b02"
+                }
+              ]
+            },
+            "id": "8577d486-0fe4-4880-bd4a-58c87633126a",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Actor",
+              "name": "student",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "843a424a-95c5-4b60-be24-4d38db954165",
+                  "title": "identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Fake student accounts, impersonation.",
+                  "mitigation": "always ask for verified ID cards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "c6d1e829-a8a1-4884-8fb4-a6d54200dece",
+                  "title": "Student Denies Course Registration/Drop",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "A student registers or drops a course but later denies performing the action. Since the system lacks secure logs, digital signatures, or tamper-proof records, it becomes impossible to prove whether the action was legitimate.",
+                  "mitigation": "Enable audit logging with timestamps, user IDs, and IP addresses.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "11e69892-640f-46d5-b6c8-0abc4da68b9e",
+                  "title": "Man-in-the-Middle",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "An attacker intercepts and manipulates communication between a student and the registration system, impersonating the student. This allows the attacker to send malicious requests, steal credentials, or alter registration data without the student’s knowledge.",
+                  "mitigation": "Use end-to-end encryption (TLS/SSL) to secure communication.\nEnforce multi-factor authentication (MFA) to reduce risk even if session tokens are stolen.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 550,
+              "y": -180
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "5e2a3db5-7f9a-4845-8335-157892f19cc4"
+                },
+                {
+                  "group": "right",
+                  "id": "2ddea180-6c97-46f5-aa10-ee3ef513134a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5f672875-c57e-4474-be49-623432ecb385"
+                },
+                {
+                  "group": "left",
+                  "id": "29112dc1-117a-4215-8825-0e4ccf670b02"
+                }
+              ]
+            },
+            "id": "e55eabfd-6b0f-4720-afcc-2738c2d7b776",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "id": "8effa087-21de-412c-8dbb-f11cf00bc13d",
+                  "title": "fake identity",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Attackers pretending to be admin. An attacker may attempt to impersonate an administrator by guessing, stealing, or bypassing authentication credentials. This can allow unauthorized access to sensitive functionality, system configurations, or critical data. If successful, the attacker could perform privileged operations, alter security settings, or disrupt normal operations.",
+                  "mitigation": "Enforce multi-factor authentication (MFA) for admin logins.\nRestrict admin portal access to specific IP ranges or VPN.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "48c71cf3-a0b7-423d-af3e-aafd445c08e3",
+                  "title": "admin action denial",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "An Admin user could deny performing critical actions (e.g., updating user details, modifying registration records, deleting data). Without proper logging and accountability, it becomes difficult to trace who actually performed the action.",
+                  "mitigation": "Regularly review logs for suspicious admin activity.\nEnforce multi-factor authentication (MFA) for admin access.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "a9f7e00b-c60d-4d17-98a2-85418feb0b14",
+                  "title": "Phishing-based Admin Spoofing",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "An attacker creates a fake login page or malicious link that resembles the legitimate admin portal. If the administrator unknowingly enters their credentials, the attacker can capture and reuse them to impersonate the admin, gaining unauthorized control of the system.",
+                  "mitigation": "Educate administrators on phishing risks and safe login practices.\nUse HTTPS and strong TLS certificates to prevent fake sites from mimicking the real portal.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 314,
+              "y": -180
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "system"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9bc58219-6a34-4cfc-b8d4-233ee6527386"
+                },
+                {
+                  "group": "right",
+                  "id": "5523d9e2-8444-432c-b922-4f8cc0dc4c0d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9d5921ab-2792-4d85-94b9-7bb26c925a38"
+                },
+                {
+                  "group": "left",
+                  "id": "66cb50df-b3f1-495e-800e-2743e272f7fd"
+                }
+              ]
+            },
+            "id": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Process",
+              "name": "system",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "course registration",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "course registration"
+            ],
+            "id": "6fdbc751-14a6-40ae-bbc7-5f9e2f911193",
+            "source": {
+              "cell": "8577d486-0fe4-4880-bd4a-58c87633126a",
+              "port": "5f672875-c57e-4474-be49-623432ecb385"
+            },
+            "target": {
+              "cell": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+              "port": "9d5921ab-2792-4d85-94b9-7bb26c925a38"
+            },
+            "vertices": [
+              {
+                "x": 230,
+                "y": -90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "course details",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "course details"
+            ],
+            "id": "4a219b05-e02c-4f31-9e62-fd7cb2832ca7",
+            "source": {
+              "x": 342,
+              "y": -120
+            },
+            "target": {
+              "cell": "8577d486-0fe4-4880-bd4a-58c87633126a",
+              "port": "5f672875-c57e-4474-be49-623432ecb385"
+            },
+            "vertices": [
+              {
+                "x": 240,
+                "y": -50
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "enquiry",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "enquiry"
+            ],
+            "id": "61dcc228-2b47-47ec-b643-3037dee90562",
+            "source": {
+              "x": 173,
+              "y": -141
+            },
+            "target": {
+              "cell": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+              "port": "66cb50df-b3f1-495e-800e-2743e272f7fd"
+            },
+            "vertices": [
+              {
+                "x": 260,
+                "y": -141
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "login/register",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "login/register"
+            ],
+            "id": "07d166b4-4eaf-4bc2-a735-526a84814671",
+            "source": {
+              "x": 114,
+              "y": -170
+            },
+            "target": {
+              "cell": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+              "port": "9bc58219-6a34-4cfc-b8d4-233ee6527386"
+            },
+            "vertices": [
+              {
+                "x": 260,
+                "y": -210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "student data",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "student data"
+            ],
+            "id": "2dbe18d0-6beb-404a-99d6-9d6ad8aeddb1",
+            "source": {
+              "x": 380,
+              "y": -150
+            },
+            "target": {
+              "cell": "e55eabfd-6b0f-4720-afcc-2738c2d7b776",
+              "port": "29112dc1-117a-4215-8825-0e4ccf670b02"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "add courses",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "add courses"
+            ],
+            "id": "a3b7b1a0-cb26-431b-a59e-3e80e676bf2c",
+            "source": {
+              "x": 598,
+              "y": -180
+            },
+            "target": {
+              "cell": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+              "port": "5523d9e2-8444-432c-b922-4f8cc0dc4c0d"
+            },
+            "vertices": [
+              {
+                "x": 550,
+                "y": -240
+              },
+              {
+                "x": 500,
+                "y": -240
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "verify new student",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "verify new student"
+            ],
+            "id": "256369ec-4b25-4db9-86bd-e84d9930e13d",
+            "source": {
+              "x": 586,
+              "y": -120
+            },
+            "target": {
+              "cell": "d7868649-b0e5-42cf-93fe-823903edd4d6",
+              "port": "5523d9e2-8444-432c-b922-4f8cc0dc4c0d"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": -120
+              }
+            ]
+          }
+        ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 7
   }
 }
