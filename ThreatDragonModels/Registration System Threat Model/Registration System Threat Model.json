@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "8577d486-0fe4-4880-bd4a-58c87633126a",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "student",
@@ -206,6 +206,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -289,7 +290,6 @@
               ]
             },
             "id": "e55eabfd-6b0f-4720-afcc-2738c2d7b776",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Admin",
@@ -367,6 +367,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -450,7 +451,6 @@
               ]
             },
             "id": "d7868649-b0e5-42cf-93fe-823903edd4d6",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "system",
